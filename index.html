@@ -1,71 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/styles.css" />
-    <title>Document</title>
-  </head>
-  <body>
-    <header>
-      <h1>Desserts</h1>
-      <button>Default</button>
-      <button>Name</button>
-      <button>Price</button>
-    </header>
-    <main>
-      <section class="products-conatiner">
-        <article class="product">
-          <div class="product-main">
-            <picture>
-              <source
-                media="(min-width: 1200px)"
-                srcset="assets/images/image-brownie-desktop.jpg"
-              />
-              <source
-                media="(min-width: 768px)"
-                srcset="assets/images/image-brownie-tablet.jpg"
-              />
-              <source
-                media="(min-width: 360px)"
-                srcset="assets/images/image-brownie-mobile.jpg"
-              />
-              <img
-                class="product-image"
-                src="./assets/images/image-brownie-mobile.jpg"
-                alt=""
-              />
-            </picture>
-            <button class="cart-button">
-              <img
-                class="icon-button"
-                src="./assets/images/icon-add-to-cart.svg"
-                alt=""
-              />
-              Add to Cart
-            </button>
-            <button class="quantity-button">
-              <img
-                class="icon-button"
-                src="./assets/images/icon-decrement-quantity.svg"
-                alt=""
-              />
-              4
-              <img
-                class="icon-button"
-                src="./assets/images/icon-increment-quantity.svg"
-                alt=""
-              />
-            </button>
-          </div>
-          <div class="product-footer">
-            <span class="type-product">Waffle</span>
-            <p class="name-product">Waffle with Berries</p>
-            <span class="price-product">$6.50</span>
-          </div>
-        </article>
-      </section>
-    </main>
-    <script src="./js/scripts.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,300..700;1,300..700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="./css/styles.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<header class="header-desserts">
+			<h1 class="title">DESSERTS</h1>
+			<button class="button">Default</button>
+			<button class="button">Name</button>
+			<button class="button">Price</button>
+		</header>
+		<main>
+			<section class="products-conatiner">
+				<article class="product">
+					<div class="product-main">
+						<picture>
+							<source
+								media="(min-width: 1200px)"
+								srcset="assets/images/image-waffle-desktop.jpg"
+							/>
+							<source
+								media="(min-width: 768px)"
+								srcset="assets/images/image-waffle-tablet.jpg"
+							/>
+							<source
+								media="(min-width: 360px)"
+								srcset="assets/images/image-waffle-mobile.jpg"
+							/>
+							<img
+								class="product-image"
+								src="./assets/images/image-waffle-mobile.jpg"
+								alt=""
+							/>
+						</picture>
+						<button class="button cart-button">
+							<img
+								class="icon-button"
+								src="./assets/images/icon-add-to-cart.svg"
+								alt=""
+							/>
+							Add to Cart
+						</button>
+						<button class="hide button quantity-button">
+							<img
+								class="icon-button"
+								src="./assets/images/icon-decrement-quantity.svg"
+								alt=""
+							/>
+							4
+							<img
+								class="icon-button"
+								src="./assets/images/icon-increment-quantity.svg"
+								alt=""
+							/>
+						</button>
+					</div>
+					<div class="product-footer">
+						<span class="type-product subtitle">Waffle</span>
+						<p class="name-product text-small">Waffle with Berries</p>
+						<span class="price-product text-small text-price">$6.50</span>
+					</div>
+				</article>
+			</section>
+			<section class="cart">
+				<p class="text-medium">Your Cart (0)</p>
+				<img src="./assets/images/illustration-empty-cart.svg" alt="" />
+				<p class="subtitle">Your added items will appear here</p>
+			</section>
+		</main>
+		<script src="./js/scripts.js"></script>
+	</body>
 </html>
