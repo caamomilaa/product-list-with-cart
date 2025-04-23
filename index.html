@@ -7,6 +7,65 @@
     <title>Document</title>
   </head>
   <body>
+    <header>
+      <h1>Desserts</h1>
+      <button>Default</button>
+      <button>Name</button>
+      <button>Price</button>
+    </header>
+    <main>
+      <section class="products-conatiner">
+        <article class="product">
+          <div class="product-main">
+            <picture>
+              <source
+                media="(min-width: 1200px)"
+                srcset="assets/images/image-brownie-desktop.jpg"
+              />
+              <source
+                media="(min-width: 768px)"
+                srcset="assets/images/image-brownie-tablet.jpg"
+              />
+              <source
+                media="(min-width: 360px)"
+                srcset="assets/images/image-brownie-mobile.jpg"
+              />
+              <img
+                class="product-image"
+                src="./assets/images/image-brownie-mobile.jpg"
+                alt=""
+              />
+            </picture>
+            <button class="cart-button">
+              <img
+                class="icon-button"
+                src="./assets/images/icon-add-to-cart.svg"
+                alt=""
+              />
+              Add to Cart
+            </button>
+            <button class="quantity-button">
+              <img
+                class="icon-button"
+                src="./assets/images/icon-decrement-quantity.svg"
+                alt=""
+              />
+              4
+              <img
+                class="icon-button"
+                src="./assets/images/icon-increment-quantity.svg"
+                alt=""
+              />
+            </button>
+          </div>
+          <div class="product-footer">
+            <span class="type-product">Waffle</span>
+            <p class="name-product">Waffle with Berries</p>
+            <span class="price-product">$6.50</span>
+          </div>
+        </article>
+      </section>
+    </main>
     <script src="./js/scripts.js"></script>
   </body>
 </html>
