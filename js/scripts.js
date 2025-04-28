@@ -1,7 +1,5 @@
 // CONSTANTES DEL DOM
-const defaultElement = document.getElementById('default');
-const nameElement = document.getElementById('name');
-const priceElement = document.getElementById('price');
+const buttonsContainerElement = document.getElementById('buttons-container'); //papa
 
 const productsContainerElement = document.getElementById('products-container');
 
@@ -204,7 +202,7 @@ const createProduct = () => {
 
 		const priceProductSpan = document.createElement('span');
 		priceProductSpan.classList.add('price-product', 'text-small', 'text-price');
-		priceProductSpan.textContent = `$${dessert.price}`;
+		priceProductSpan.textContent = `$${dessert.price.toFixed(2)}`;
 		productFooterDiv.append(priceProductSpan);
 
 		article.append(productFooterDiv);
@@ -215,4 +213,38 @@ const createProduct = () => {
 	productsContainerElement.append(fragment);
 };
 
+// const filterTasks = () => {
+// 	const filter = filtersElement.querySelector('.filter-active').dataset.filter;
+// 	let tasksToRender = allTasks;
+
+// 	if (filter === 'completed') {
+// 		tasksToRender = allTasks.filter(task => task.completed);
+// 	} else if (filter === 'active') {
+// 		tasksToRender = allTasks.filter(task => !task.completed);
+// 	}
+
+// 	insertTasks(tasksToRender);
+// };
+const sortProducts = event => {
+	const desserts = [...PRODUCTS];
+	const filterSelected = event.target; //necesito que escuche en que hijo está haciendo click
+	const filterDataset = event.target.dataset.filter; //necesito sabert el nombre del dat del filtro
+
+	if (!filterDataset) return;
+	buttonsContainerElement
+		.querySelector('.filter-active')
+		.classList.remove('.filter-active');
+
+	filterSelected.classList.add('filter-active');
+
+	if (filterDataset === 'name') {
+		desserts.sort((a, b) => a.title.localeCompare(b.title));
+	} else if (filterDataset === 'price') {
+		desserts.sort((a, b) => {
+			return a.price - b.price;
+		});
+	}
+};
+
 createProduct();
+buttonsContainerElement.addEventListener('click', sortProducts);
